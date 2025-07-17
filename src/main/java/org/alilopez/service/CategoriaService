@@ -1,0 +1,50 @@
+
+// 3. SERVICE - CategoriaService
+// ========================================
+// package org.alilopez.service;
+//
+// import org.alilopez.model.Categoria;
+// import org.alilopez.repository.CategoriaRepository;
+//
+// import java.sql.SQLException;
+// import java.util.List;
+//
+// public class CategoriaService {
+//     // Inyección de dependencia - Recibe el repository
+//     private final CategoriaRepository categoriaRepo;
+//
+//     // Constructor - Recibe el repository desde AppModule
+//     public CategoriaService(CategoriaRepository categoriaRepo) {
+//         this.categoriaRepo = categoriaRepo;
+//     }
+//
+//     // SERVICIO 1: GET ALL - Lógica de negocio para obtener todas las categorías
+//     public List<Categoria> getAllCategorias() throws SQLException {
+//         // Aquí podrías agregar validaciones, filtros, etc.
+//         // Por ahora, solo delega al repository
+//         return categoriaRepo.findAll();
+//     }
+//
+//     // SERVICIO 2: GET BY ID - Lógica de negocio para obtener una categoría
+//     public Categoria getCategoriaById(int id) throws SQLException {
+//         // Aquí podrías validar que el ID sea válido, etc.
+//         if (id <= 0) {
+//             throw new IllegalArgumentException("ID debe ser mayor a 0");
+//         }
+//         return categoriaRepo.findById(id);
+//     }
+//
+//     // SERVICIO 3: POST - Lógica de negocio para crear categoría
+//     public void createCategoria(Categoria categoria) throws SQLException {
+//         // Aquí podrías agregar validaciones:
+//         // - Verificar que el nombre no esté vacío
+//         // - Verificar que no exista una categoría con el mismo nombre
+//         // - Etc.
+//
+//         if (categoria.getNombre() == null || categoria.getNombre().trim().isEmpty()) {
+//             throw new IllegalArgumentException("El nombre de la categoría es obligatorio");
+//         }
+//
+//         categoriaRepo.save(categoria);
+//     }
+// }

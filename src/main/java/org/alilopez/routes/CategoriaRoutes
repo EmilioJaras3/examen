@@ -1,0 +1,39 @@
+// 5. ROUTES - CategoriaRoutes
+// ========================================
+// package org.alilopez.routes;
+//
+// import io.javalin.Javalin;
+// import org.alilopez.controller.CategoriaController;
+//
+// public class CategoriaRoutes {
+//     // Inyección de dependencia - Recibe el controller
+//     private final CategoriaController categoriaController;
+//
+//     // Constructor - Recibe el controller desde AppModule
+//     public CategoriaRoutes(CategoriaController categoriaController) {
+//         this.categoriaController = categoriaController;
+//     }
+//
+//     // MÉTODO PRINCIPAL: Registrar todas las rutas en la aplicación Javalin
+//     public void register(Javalin app) {
+//         // RUTA 1: GET /categorias - Obtener todas las categorías
+//         // URL completa: http://localhost:7000/categorias
+//         // Método HTTP: GET
+//         // Sin parámetros, sin body
+//         app.get("/categorias", categoriaController::getAll);
+//
+//         // RUTA 2: GET /categorias/{id} - Obtener categoría específica
+//         // URL completa: http://localhost:7000/categorias/1
+//         // Método HTTP: GET
+//         // Parámetro: {id} en la URL (ejemplo: 1, 2, 3, etc.)
+//         // Sin body
+//         app.get("/categorias/{id}", categoriaController::getById);
+//
+//         // RUTA 3: POST /categorias - Crear nueva categoría
+//         // URL completa: http://localhost:7000/categorias
+//         // Método HTTP: POST
+//         // Sin parámetros en URL
+//         // Body: JSON con datos de la categoría
+//         app.post("/categorias", categoriaController::create);
+//     }
+// }
