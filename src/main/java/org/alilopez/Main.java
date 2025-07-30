@@ -7,16 +7,20 @@ import org.alilopez.di.AppModule;
 public class Main {
     public static void main(String[] args) {
 
+        // 1. Crear y configurar la aplicación Javalin
         Javalin app = Javalin.create(config -> {
             config.bundledPlugins.enableCors(cors -> {
                 cors.addRule(CorsPluginConfig.CorsRule::anyHost);
             });
         }).start(7000);
 
-        // Rutas generales
+        // 2. Ruta básica de prueba
         app.get("/", ctx -> ctx.result("API Javalin 2"));
 
-        AppModule.initUser().register(app);
+        // 3. Registrar todas las rutas de la aplicación
+        AppModule.initUser().register(app);        // /users, /users/{id}
         AppModule.initProducts().register(app);
+
+
     }
 }
